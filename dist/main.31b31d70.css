@@ -55,35 +55,56 @@ img {
   max-width: 100%;
 }
 
-.aside-cover {
-  width: 100vw;
-  background-color: red;
+aside {
+  font-size: 16px;
+  background-color: orangered;
+  max-height: 100vh;
+  max-width: 270px;
+  position: sticky;
+  overflow-x: scroll;
+  scrollbar-color: grey;
+  scrollbar-width: thin;
+  overflow-x: hidden;
+  z-index: 4;
+}
+aside .aside-nav {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding-left: 0.1em;
+  margin: 0;
+  padding: 0;
+}
+aside .aside-nav .burger-nav:hover {
+  background-color: transparent;
+}
+aside .aside-nav span.h4 {
+  margin-right: 0.4em;
+}
+aside .aside-nav a {
+  position: relative;
+}
+aside .aside-nav a:hover {
+  color: inherit;
+}
+aside .aside-nav sup {
+  position: absolute;
+  top: -0.3em;
 }
 
 .aside-content {
-  padding: 1em 1.5em;
+  padding-block: 1em;
+  padding-inline: 0.4em;
   padding-top: 0;
   background-color: orangered;
-  max-width: 310px;
-  width: fit-content;
-  position: fixed;
-  overflow-y: scroll;
-  inset: 0;
-  left: -100%;
-  backdrop-filter: blur(1px);
 }
 .aside-content li {
   list-style: none;
 }
 
-.aside-nav {
-  width: 200px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0.4em 0;
+.aside-list {
+  margin-inline: 0;
 }
-
 .aside-list ul {
   border-bottom: 1px solid black;
 }
@@ -101,7 +122,7 @@ img {
   white-space: nowrap;
 }
 .aside-list a {
-  padding: 0.8em;
+  padding: 0.5em;
   display: block;
 }
 .aside-list a span:nth-child(1) {
@@ -111,7 +132,26 @@ img {
   color: white;
 }
 .aside-list h4 {
-  padding-block: 1.2em;
+  padding-block: 0.6em;
+}
+
+#subscriptions .fa {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  overflow: hidden;
+  background-color: grey;
+}
+#subscriptions a {
+  display: flex;
+  align-items: center;
+}
+
+.aside-list a {
+  display: flex;
+  align-items: center;
 }
 
 .footer ul {
@@ -128,9 +168,8 @@ img {
 
 .burger-nav {
   cursor: pointer;
-  border: 1px solid black;
-  width: 35px;
-  height: 35px;
+  width: 38px;
+  height: 38px;
   display: grid;
   place-content: center;
   border-radius: 50%;
@@ -147,7 +186,7 @@ img {
   display: block;
 }
 .burger-nav:hover {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(125, 122, 122);
 }
 .burger-nav:hover .bar {
   background-color: red;
@@ -229,8 +268,13 @@ button:has(.fa) {
   color: red;
 }
 
+aside .fa {
+  font-size: 20px;
+}
+
 .search-type {
   display: flex;
+  display: none;
 }
 .search-type input {
   border: 1px solid black;
@@ -241,7 +285,7 @@ button:has(.fa) {
   -moz-border-radius: 10vw 0 0 10vw;
   -ms-border-radius: 10vw 0 0 10vw;
   -o-border-radius: 10vw 0 0 10vw;
-  padding: 0.5em 1em;
+  padding: 0 1em;
 }
 .search-type input:focus {
   outline: none;
@@ -257,14 +301,13 @@ button:has(.fa) {
   -moz-border-radius: 0 10vw 10vw 0;
   -ms-border-radius: 0 10vw 10vw 0;
   -o-border-radius: 0 10vw 10vw 0;
-  padding: 0.5em 1em;
+  padding: 0 0.4em;
   background-color: white;
 }
 
-.profile .profile__img {
-  width: 25px;
-  height: 25px;
-  border: 1px solid black;
+.profile {
+  display: flex;
+  align-items: center;
 }
 .profile .profile__img img {
   display: none;
@@ -307,16 +350,46 @@ nav a:hover {
   color: inherit;
 }
 
+header {
+  background-color: red;
+  padding: 0.4em 1em;
+}
 header nav {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+}
+header .mobile-nav {
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+}
+header .mobile-nav:nth-child(2) .fa {
+  margin-inline: 0.4em;
 }
 
-.main-logo {
-  width: 100px;
+.main-logo sup {
+  top: 0.7em;
+  right: -1em;
+  position: absolute;
+  font-size: 0.5em;
 }
 .main-logo a {
   display: flex;
+  align-items: center;
+  position: relative;
+}
+.main-logo .fa {
+  font-size: 1.5em;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  margin-inline: 0.5em 0.2em;
+  color: red;
+}
+.main-logo .fa:hover {
+  background-color: transparent;
 }
 
 .wrapper {
@@ -378,6 +451,17 @@ header nav {
 .block-a {
   display: flex;
   gap: 0.8em;
+}
+
+main {
+  position: relative;
+}
+
+#main-wrapper {
+  position: absolute;
+  inset: 0;
+  top: -700px;
+  z-index: 1;
 }
 
 /*# sourceMappingURL=/main.31b31d70.css.map */

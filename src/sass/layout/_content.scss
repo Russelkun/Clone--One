@@ -74,3 +74,14 @@
     display: flex;
     gap: .8em;
 }
+
+main {
+    position: relative;
+}
+
+#main-wrapper {
+    position: absolute;
+    inset: 0;
+    top: -700px;
+    z-index: 1;
+}
