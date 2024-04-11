@@ -1,0 +1,7 @@
+.clear {
+    clear: both;
+}
+
+button:has(.fa) {
+    position: relative;
+}

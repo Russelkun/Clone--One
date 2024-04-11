@@ -1,0 +1,38 @@
+aside {
+    padding: 1em 1.5em;
+    background-color: #ff4500;
+    max-width: 250px;
+    li {
+        list-style: none;
+    }
+}
+.aside-list {
+    li {
+        width: 200px;
+        border: 1px solid black;
+        border-radius: 6px;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        -ms-border-radius: 6px;
+        -o-border-radius: 6px;
+        &:hover {
+            background-color: grey;
+        }
+}
+    a {
+        padding: .8em;
+        display: block;
+        // background-color: olivedrab;
+        span {
+            &:nth-child(1) {
+                margin-right: .8em;
+            }
+            &:hover:nth-child(2) {
+                color: white;
+            }
+        }
+    }
+    h4 {
+        padding-block: 1.2em;
+    }
+}

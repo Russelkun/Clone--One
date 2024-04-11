@@ -1,0 +1,16 @@
+//
+
+.footer {
+    ul {
+        display: flex;
+        // justify-content: space-evenly;
+        flex-wrap: wrap;
+        gap: .7em;
+    }
+    #{&}-top {
+        margin: .5em 0;
+    }
+    #{&}-bottom {
+        margin: .5em 0;
+    }
+}

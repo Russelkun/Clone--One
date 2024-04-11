@@ -1,0 +1,80 @@
+// top header
+
+@use "../utilities/" as *;
+
+.search-type {
+    display: flex;
+    input {
+    border: 1px solid black;
+    width: fit-content;
+    margin: 0;
+    border-radius: 10vw 0 0 10vw;
+    -webkit-border-radius: 10vw 0 0 10vw;
+    -moz-border-radius: 10vw 0 0 10vw;
+    -ms-border-radius: 10vw 0 0 10vw;
+    -o-border-radius: 10vw 0 0 10vw;
+    padding: .5em 1em;
+    &:focus {
+        outline: none;
+        bordeR: 1px solid red;
+    }
+    }
+    button {
+    border: 1px solid black;
+    border-left: none;
+    width: fit-content;
+    margin: 0;
+    border-radius: 0 10vw 10vw 0;
+    -webkit-border-radius: 0 10vw 10vw 0;
+    -moz-border-radius: 0 10vw 10vw 0;
+    -ms-border-radius: 0 10vw 10vw 0;
+    -o-border-radius: 0 10vw 10vw 0;
+    padding: .5em 1em;
+    background-color: white;
+    }
+}
+.profile {
+    #{&}__img {
+    width: 25px;
+    height: 25px;
+    border: 1px solid black;
+    img {
+        display: none;
+    }
+    }
+}
+
+
+//nav
+
+nav {
+    li {
+        border: 1px solid red;
+        width: fit-content;
+        margin: .7em 0;
+        border-radius: 4px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        -ms-border-radius: 4px;
+        -o-border-radius: 4px;
+        transition: all .2s;
+        -webkit-transition: all .2s;
+        -moz-transition: all .2s;
+        -ms-transition: all .2s;
+        -o-transition: all .2s;
+        &:hover {
+            background-color: grey;
+        }
+}
+    li.active {
+        background-color: grey;
+    }
+
+    a {
+        &:hover {
+            color: inherit
+        }
+        display: block;
+        padding: .4em;
+    }
+}
