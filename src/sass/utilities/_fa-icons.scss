@@ -1,0 +1,57 @@
+@mixin fa($point) {
+    @if $point == "centerFA" {
+        display: grid;
+        place-content: center;
+    }
+}
+
+//
+.dot-details {
+    .fa {
+    @include fa(centerFA);
+    }
+}
+
+.fa {
+    // font-size: 1em;
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
+}
+header {
+    .fa {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+        @include fa(centerFA);
+        &:hover {
+            background: grey;
+        }
+    }
+}
+button:has(.fa) {
+    border: none;
+    background-color: transparent;
+}
+.fa-microphone {
+    background-color: rgba(128, 128, 128, 0.719);
+    border: none;
+    &:hover {
+        background-color: grey;
+    }
+}
+.fa-search {
+    &:hover {
+        color: red;
+    }
+}
+
+aside {
+    .fa {
+        font-size: 20px;
+    }
+}
