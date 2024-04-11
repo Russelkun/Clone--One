@@ -48,9 +48,17 @@
 //nav
 
 nav {
+    ul {        
+        display: flex;
+        overflow-x: scroll;
+        gap: 1em;
+        padding: 0 .5em;
+    }
     li {
         border: 1px solid red;
-        width: fit-content;
+        width: auto;
+        white-space: nowrap;
+        height: 40px;
         margin: .7em 0;
         border-radius: 4px;
         -webkit-border-radius: 4px;
@@ -76,5 +84,20 @@ nav {
         }
         display: block;
         padding: .4em;
+    }
+}
+
+header {
+    nav {
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
+
+.main-logo {
+    width: 100px;
+    // border: 2px solid black;
+    a {
+        display: flex;
     }
 }

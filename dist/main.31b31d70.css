@@ -32,6 +32,10 @@ a:hover {
   color: red;
 }
 
+sup {
+  top: -0.65em;
+}
+
 button {
   cursor: pointer;
   white-space: nowrap;
@@ -51,18 +55,39 @@ img {
   max-width: 100%;
 }
 
-aside {
-  padding: 1em 1.5em;
-  background-color: #ff4500;
-  max-width: 250px;
+.aside-cover {
+  width: 100vw;
+  background-color: red;
 }
-aside li {
+
+.aside-content {
+  padding: 1em 1.5em;
+  padding-top: 0;
+  background-color: orangered;
+  max-width: 310px;
+  width: fit-content;
+  position: fixed;
+  overflow-y: scroll;
+  inset: 0;
+  left: -100%;
+  backdrop-filter: blur(1px);
+}
+.aside-content li {
   list-style: none;
 }
 
-.aside-list li {
+.aside-nav {
   width: 200px;
-  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.4em 0;
+}
+
+.aside-list ul {
+  border-bottom: 1px solid black;
+}
+.aside-list li {
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -71,6 +96,9 @@ aside li {
 }
 .aside-list li:hover {
   background-color: grey;
+}
+.aside-list li span {
+  white-space: nowrap;
 }
 .aside-list a {
   padding: 0.8em;
@@ -129,6 +157,10 @@ aside li {
   cursor: pointer;
   width: fit-content;
   padding: 0.3em;
+  float: right;
+  clear: right;
+  position: absolute;
+  right: 0;
 }
 .burger-dot .dot {
   width: 4px;
@@ -173,6 +205,8 @@ header .fa {
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
+  display: grid;
+  place-content: center;
 }
 header .fa:hover {
   background: grey;
@@ -236,9 +270,17 @@ button:has(.fa) {
   display: none;
 }
 
+nav ul {
+  display: flex;
+  overflow-x: scroll;
+  gap: 1em;
+  padding: 0 0.5em;
+}
 nav li {
   border: 1px solid red;
-  width: fit-content;
+  width: auto;
+  white-space: nowrap;
+  height: 40px;
   margin: 0.7em 0;
   border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -265,15 +307,37 @@ nav a:hover {
   color: inherit;
 }
 
+header nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.main-logo {
+  width: 100px;
+}
+.main-logo a {
+  display: flex;
+}
+
 .wrapper {
   border: 1px solid black;
+  position: relative;
+  padding: 1em;
 }
 
 .thumbnail {
   border: 1px solid black;
   height: 350px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
 }
 
+.details {
+  margin: 0;
+}
 .details .details-wrapper {
   display: grid;
 }

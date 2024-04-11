@@ -29,6 +29,12 @@
     cursor: pointer;
     width: fit-content;
     padding: .3em;
+    float: right;
+    clear: right;
+    position: absolute;
+    // inset: 0;
+    right: 0;
+    // bottom: 0;
     .dot {
         width: 4px;
         height: 4px;
